@@ -8,7 +8,7 @@ class MainButtons extends StatelessWidget {
   });
   final String buttonTitle;
   final FakeStore data;
-  final Function? function;
+  final Function() ? function;
   final IconData icon;
   final MaterialStatePropertyAll<Color> buttonColor;
 
@@ -27,9 +27,7 @@ class MainButtons extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () {
-          function;
-        },
+        onPressed: function,
         icon:Icon(
           icon,
           color: Colors.white,

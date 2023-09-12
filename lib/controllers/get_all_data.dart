@@ -14,3 +14,14 @@ class GetAllData{
     }
   }
 }
+class Post{
+  Future<void> postData()async{
+    final response =await http.post(Uri.parse(api),body: []);
+    if(response.statusCode == 200){ 
+      print('Post Successfull (statusCode : ${response.statusCode})');
+      
+    }else{
+      throw Exception('Error');
+    }
+  }
+}

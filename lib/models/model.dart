@@ -17,7 +17,7 @@ class FakeStore {
   factory FakeStore.fromJson(Map<String, dynamic> json) {
     return FakeStore(
         id: json['id'],
-        title: json['title'],
+        title: json['title'], 
         description: json['description'],
         category: json['category'],
         price: json['price'].toString(),

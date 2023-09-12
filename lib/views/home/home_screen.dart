@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<ProductsBloc>().add(GetDataEvent());
-
     return Scaffold(
       backgroundColor: constantBackground,
       appBar: AppBar(

@@ -1,3 +1,4 @@
+import 'package:fakestore/controllers/cart/cart_list_bloc.dart';
 import 'package:fakestore/controllers/product/products_bloc.dart';
 import 'package:fakestore/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ProductsBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ProductsBloc>(create: (context)=>ProductsBloc()),
+        BlocProvider<CartListBloc>(create: (context)=>CartListBloc()),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
