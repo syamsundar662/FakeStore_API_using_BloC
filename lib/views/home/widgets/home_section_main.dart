@@ -13,8 +13,7 @@ class HomeSectionMain extends StatelessWidget {
         height: 200,
         decoration: BoxDecoration(
             image: const DecorationImage(
-                image: AssetImage('assets/8047540.jpg'),
-                fit: BoxFit.fill),
+                image: AssetImage('assets/8047540.jpg'), fit: BoxFit.fill),
             borderRadius: BorderRadius.circular(13),
             border: Border.all(width: .2)),
       ),

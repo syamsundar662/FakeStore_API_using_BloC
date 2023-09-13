@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ProductsBloc>(create: (context)=>ProductsBloc()),
-        BlocProvider<CartListBloc>(create: (context)=>CartListBloc()),
+        BlocProvider<ProductsBloc>(create: (context) => ProductsBloc()),
+        BlocProvider<CartListBloc>(create: (context) => CartListBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

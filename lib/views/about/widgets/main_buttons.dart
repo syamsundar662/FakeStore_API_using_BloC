@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class MainButtons extends StatelessWidget {
   const MainButtons({
     super.key,
-    required this.data, required this.buttonTitle, this.function, required this.icon, required this.buttonColor,
+    required this.data,
+    required this.buttonTitle,
+    this.function,
+    required this.icon,
+    required this.buttonColor,
   });
   final String buttonTitle;
   final FakeStore data;
-  final Function() ? function;
+  final Function()? function;
   final IconData icon;
   final MaterialStatePropertyAll<Color> buttonColor;
 
@@ -19,8 +23,7 @@ class MainButtons extends StatelessWidget {
       height: 50,
       child: TextButton.icon(
         style: ButtonStyle(
-          backgroundColor:
-              buttonColor,
+          backgroundColor: buttonColor,
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
@@ -28,11 +31,11 @@ class MainButtons extends StatelessWidget {
           ),
         ),
         onPressed: function,
-        icon:Icon(
+        icon: Icon(
           icon,
           color: Colors.white,
         ),
-        label:  Text(
+        label: Text(
           buttonTitle,
           style: const TextStyle(color: Colors.white),
         ),

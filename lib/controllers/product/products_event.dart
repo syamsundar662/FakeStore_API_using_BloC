@@ -1,10 +1,5 @@
 part of 'products_bloc.dart';
 
+class ProductsEvent {}
 
- class ProductsEvent {
-
-}
-
-class GetDataEvent extends ProductsEvent{
- 
-}
+class GetDataEvent extends ProductsEvent {}

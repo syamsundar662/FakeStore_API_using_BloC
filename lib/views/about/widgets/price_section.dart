@@ -1,4 +1,3 @@
-
 import 'package:fakestore/models/model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +16,7 @@ class PriceSection extends StatelessWidget {
       children: [
         Text(
           '\$${data.price}',
-          style: const TextStyle(
-              fontWeight: FontWeight.w500, fontSize: 25),
+          style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
         ),
         const Spacer(),
         Container(

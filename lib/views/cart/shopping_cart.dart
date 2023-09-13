@@ -11,9 +11,8 @@ class ShoppingCart extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: BlocBuilder<CartListBloc , CartListState>(
-
-          builder: (context, state) { 
+        child: BlocBuilder<CartListBloc, CartListState>(
+          builder: (context, state) {
             return ListView.separated(
               separatorBuilder: (context, index) {
                 return const SizedBox(
@@ -36,7 +35,7 @@ class ShoppingCart extends StatelessWidget {
                             child: Image.network(state.cart[index].image)),
                         width10,
                         Text(
-                         state.cart[index].title.substring(0, 11),
+                          state.cart[index].title.substring(0, 11),
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w500),
@@ -44,10 +43,12 @@ class ShoppingCart extends StatelessWidget {
                         const Spacer(),
                         IconButton(
                             onPressed: () {
-                              context.read<CartListBloc>().add(UpdateCartEvent(add: false, product: state.cart[index]));
-                            }, icon: const Icon(Icons.delete_outline))
+                              context.read<CartListBloc>().add(UpdateCartEvent(
+                                  add: false, product: state.cart[index]));
+                            },
+                            icon: const Icon(Icons.delete_outline))
                       ],
-                    )); 
+                    ));
               },
             );
           },

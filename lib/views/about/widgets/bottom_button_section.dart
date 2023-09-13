@@ -1,4 +1,3 @@
-
 import 'package:fakestore/controllers/cart/cart_list_bloc.dart';
 import 'package:fakestore/controllers/get_all_data.dart';
 import 'package:fakestore/models/model.dart';
@@ -21,22 +20,38 @@ class ButtonSectionBottom extends StatelessWidget {
       left: 0,
       right: 0,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10), 
-        color: Colors.white, 
-        child: Row( 
-          mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MainButtons(buttonColor: const MaterialStatePropertyAll(Colors.black),icon: Icons.shopping_cart,data: data, buttonTitle: 'Add to cart', function: (){
-              context.read<CartListBloc>().add(UpdateCartEvent(add: true, product: data));
-              }
-              ),
-            MainButtons(buttonColor: const MaterialStatePropertyAll(  Color.fromARGB(255, 20, 160, 7)),icon: Icons.shopping_cart,data: data, buttonTitle: 'Buy Now',function: () {
-              Post().postData();
-            },),
-          ],
+            MainButtons(
+                buttonColor: const MaterialStatePropertyAll(Colors.black),
+                icon: Icons.shopping_cart,
+                data: data,
+                buttonTitle: 'Add to cart',
+                function: () {
+                  context
+                      .read<CartListBloc>()
+                      .add(UpdateCartEvent(add: true, product: data));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Successfully added'),
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        ));
+                }),
+            MainButtons(
+              buttonColor: const MaterialStatePropertyAll( 
+                  Color.fromARGB(255, 20, 160, 7)),
+              icon: Icons.shopping_cart,
+              data: data, 
+              buttonTitle: 'Buy Now',
+              function: () { 
+                Post().postData();
+              },
+            ),
+          ], 
         ),
       ),
     );
   }
 }
-

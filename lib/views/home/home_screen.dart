@@ -1,3 +1,4 @@
+import 'package:fakestore/views/cart/shopping_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fakestore/core/constants/constants.dart';
@@ -18,13 +19,18 @@ class HomeScreen extends StatelessWidget {
         title: const Text(
           'FakeStore',
           style: TextStyle(fontStyle: FontStyle.normal),
-        ),
+        ), 
         leading: const Icon(Icons.list_outlined),
-        backgroundColor:constantBackground,
+        backgroundColor: constantBackground,
         surfaceTintColor: constantBackground,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ShoppingCart()));
+              },
               icon: const Icon(Icons.local_grocery_store_sharp))
         ],
       ),
@@ -40,7 +46,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 width15,
                 Text(
-                  'Latest Arrives',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  'Latest Arrives',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                 ),
               ],
             ),

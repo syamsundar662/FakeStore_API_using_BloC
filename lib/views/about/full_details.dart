@@ -17,13 +17,16 @@ class FullDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: constantBackground,
       appBar: AppBar(
+        elevation: 1  ,shadowColor: const Color.fromARGB(248, 250, 250, 250)  ,
         backgroundColor: constantBackground,
         surfaceTintColor: constantBackground,
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const ShoppingCart()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ShoppingCart()));
             },
             icon: const Icon(Icons.shopping_cart),
           ),
@@ -33,7 +36,7 @@ class FullDetails extends StatelessWidget {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
+              padding: const EdgeInsets.only(left: 10, right: 10,top: 15),
               child: ListView(
                 children: [
                   Container(
@@ -41,7 +44,7 @@ class FullDetails extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                        image: NetworkImage(data.image, scale: 70),
+                        image: NetworkImage(data.image),
                         fit: BoxFit.contain,
                       ),
                     ),
