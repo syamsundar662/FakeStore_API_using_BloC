@@ -1,5 +1,4 @@
 import 'package:fakestore/models/model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PriceSection extends StatelessWidget {

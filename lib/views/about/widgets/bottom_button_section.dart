@@ -16,7 +16,7 @@ class ButtonSectionBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
+      bottom: 10,
       left: 0,
       right: 0,
       child: Container(
@@ -35,10 +35,12 @@ class ButtonSectionBottom extends StatelessWidget {
                       .read<CartListBloc>()
                       .add(UpdateCartEvent(add: true, product: data));
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Successfully added'),
+          content: Text('Item added to cart successfully'),
+          shape: BeveledRectangleBorder(),
+          dismissDirection: DismissDirection.endToStart,
           backgroundColor: Color.fromARGB(255, 0, 0, 0),
         ));
-                }),
+                }), 
             MainButtons(
               buttonColor: const MaterialStatePropertyAll( 
                   Color.fromARGB(255, 20, 160, 7)),

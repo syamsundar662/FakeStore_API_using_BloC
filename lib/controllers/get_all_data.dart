@@ -17,8 +17,9 @@ class GetAllData {
 
 class Post {
   Future<void> postData() async {
-    final response = await http.post(Uri.parse(api), body: []);
+    final response = await http.post(Uri.parse(api), );
     if (response.statusCode == 200) {
+      // ignore: avoid_print
       print('Post Successfull (statusCode : ${response.statusCode})');
     } else {
       throw Exception('Error');
