@@ -8,7 +8,6 @@ class PriceSection extends StatelessWidget {
   });
 
   final FakeStore data;
-
   @override
   Widget build(BuildContext context) {
     return Row(

@@ -1,4 +1,5 @@
 import 'package:fakestore/controllers/cart/cart_list_bloc.dart';
+import 'package:fakestore/controllers/get_all_data.dart';
 import 'package:fakestore/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,10 +45,16 @@ class ShoppingCart extends StatelessWidget {
                         const Spacer(),
                         IconButton(
                             onPressed: () {
+                              Api().patchData(state.cart[index].id);
+                            },
+                            icon: const Icon(Icons.mode_edit_outline_outlined)),
+                        IconButton(
+                            onPressed: () {
+                              Api().deleteData(state.cart[index].id);
                               context.read<CartListBloc>().add(UpdateCartEvent(
                                   add: false, product: state.cart[index]));
                             },
-                            icon: const Icon(Icons.delete_outline))
+                            icon: const Icon(Icons.delete_outline)),
                       ],
                     ));
               },

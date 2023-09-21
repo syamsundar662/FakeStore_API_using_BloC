@@ -9,7 +9,7 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   ProductsBloc() : super(ProductsInitial()) {
     on<GetDataEvent>((event, emit) async {
       emit(ProductsState(store: []));
-      final products = await GetAllData().getall();
+      final products = await Api().getall();
       return emit(ProductsState(store: products));
     });
   }

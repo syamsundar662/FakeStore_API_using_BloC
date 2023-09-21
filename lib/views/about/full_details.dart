@@ -1,3 +1,4 @@
+import 'package:fakestore/controllers/get_all_data.dart';
 import 'package:fakestore/core/constants/constants.dart';
 import 'package:fakestore/models/model.dart';
 import 'package:fakestore/views/about/widgets/bottom_button_section.dart';
@@ -23,6 +24,7 @@ class FullDetails extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              Api().putData(data.id);
               Navigator.push(
                   context,
                   MaterialPageRoute(

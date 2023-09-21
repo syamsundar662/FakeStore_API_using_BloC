@@ -48,7 +48,7 @@ class ButtonSectionBottom extends StatelessWidget {
               data: data, 
               buttonTitle: 'Buy Now',
               function: () { 
-                Post().postData();
+                Api().postData();
               },
             ),
           ], 
