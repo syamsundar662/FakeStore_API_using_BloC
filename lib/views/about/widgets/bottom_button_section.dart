@@ -1,5 +1,5 @@
+import 'package:fakestore/controllers/api_integration.dart';
 import 'package:fakestore/controllers/cart/cart_list_bloc.dart';
-import 'package:fakestore/controllers/get_all_data.dart';
 import 'package:fakestore/models/model.dart';
 import 'package:fakestore/views/about/widgets/main_buttons.dart';
 import 'package:flutter/material.dart';

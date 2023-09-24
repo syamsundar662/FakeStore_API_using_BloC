@@ -1,4 +1,4 @@
-import 'package:fakestore/controllers/get_all_data.dart';
+import 'package:fakestore/controllers/api_integration.dart';
 import 'package:fakestore/core/constants/constants.dart';
 import 'package:fakestore/models/model.dart';
 import 'package:fakestore/views/about/widgets/bottom_button_section.dart';
@@ -24,7 +24,8 @@ class FullDetails extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Api().putData(data.id);
+              // Api().putData(data.id);
+              Api().putData(product: data);
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -36,7 +37,7 @@ class FullDetails extends StatelessWidget {
       ),
       body: SafeArea(
         child: Stack(
-          children: [
+          children: [ 
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10,top: 15),
               child: ListView(

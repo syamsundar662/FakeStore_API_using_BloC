@@ -1,5 +1,5 @@
+import 'package:fakestore/controllers/api_integration.dart';
 import 'package:fakestore/controllers/cart/cart_list_bloc.dart';
-import 'package:fakestore/controllers/get_all_data.dart';
 import 'package:fakestore/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,7 +45,8 @@ class ShoppingCart extends StatelessWidget {
                         const Spacer(),
                         IconButton(
                             onPressed: () {
-                              Api().patchData(state.cart[index].id);
+                              // Api().patchData(state.cart[index].id);
+                              Api().patchData(product: state.cart[index]);
                             },
                             icon: const Icon(Icons.mode_edit_outline_outlined)),
                         IconButton(
