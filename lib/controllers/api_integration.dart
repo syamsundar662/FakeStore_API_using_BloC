@@ -4,15 +4,7 @@ import 'package:fakestore/models/model.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  Future<List<FakeStore>> getall() async {
-    final resp = await http.get(Uri.parse(api));
-    if (resp.statusCode == 200) {
-      final respData = jsonDecode(resp.body) as List;
-      return respData.map((data) => FakeStore.fromJson(data)).toList();
-    } else {
-      throw Exception('Error');
-    }
-  }
+
 
   Future<void> postData() async {
     final response = await http.post(
@@ -25,6 +17,17 @@ class Api {
       throw Exception('Error');
     }
   }
+
+  Future<List<FakeStore>> getall() async {
+    final response = await http.get(Uri.parse(api));
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body) as List;
+      return responseData.map((data) => FakeStore.fromJson(data)).toList();
+    } else {
+      throw Exception('Error');
+    }
+  }
+
 
   Future<void> deleteData(int id) async {
     final response = await http.delete(Uri.parse('$api/$id'));
