@@ -5,10 +5,10 @@ import 'package:http/http.dart' as http;
 
 class Api {
   Future<List<FakeStore>> getall() async {
-    final response = await http.get(Uri.parse(api));
-    if (response.statusCode == 200) {
-      final responseData = jsonDecode(response.body) as List;
-      return responseData.map((data) => FakeStore.fromJson(data)).toList();
+    final resp = await http.get(Uri.parse(api));
+    if (resp.statusCode == 200) {
+      final respData = jsonDecode(resp.body) as List;
+      return respData.map((data) => FakeStore.fromJson(data)).toList();
     } else {
       throw Exception('Error');
     }
