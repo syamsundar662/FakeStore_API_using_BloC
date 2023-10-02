@@ -67,4 +67,19 @@ class Api {
       throw Exception('Error');
     }
   }
+  Future<void> patchDatas({required FakeStore product}) async {
+    final response = await http.patch(Uri.parse(patchApi), body: {
+      'title': 'test product',
+      'price': 13.5.toString(),
+      'description': 'lorem ipsum set',
+      'image': 'https://i.pravatar.cc',
+      'category': 'electronic'
+    });
+    if (response.statusCode == 200) {
+      // ignore: avoid_print
+      print('PATCH Successful (statusCode: ${response.statusCode})');
+    } else {
+      throw Exception('Error');
+    }
+  }
 }
